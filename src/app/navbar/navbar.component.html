@@ -1,0 +1,5 @@
+<ul>
+    <li *ngFor="let item of menu">
+        <a [routerLink]="[item.routePath]" routerLinkActive="is-currentRoute" class="category-link">{{item.linkName}}</a>
+    </li>
+</ul>
