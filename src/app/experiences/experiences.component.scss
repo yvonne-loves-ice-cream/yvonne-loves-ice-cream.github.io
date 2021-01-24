@@ -1,0 +1,37 @@
+.experience-card {
+    width: 100%;
+}
+
+.content {
+    margin: 50px 200px;
+    display: flex;
+    flex-direction: row;
+}
+
+.right-card {
+    margin-left: 100px;
+}
+
+.bomberdier {
+    background-image: url('../../assets/img/ba-logo.jpeg');
+    background-size: cover;
+}
+
+.cosco {
+    background-image: url('../../assets/img/csoco-logo.png');
+    background-size: cover;
+}
+
+.uoft {
+    background-image: url('../../assets/img/uoft.png');
+    background-size: cover;
+}
+
+.cineplex {
+    background-image: url('../../assets/img/cin-logo.png');
+    background-size: cover;
+}
+
+.experience-card {
+    width: 400px;
+}

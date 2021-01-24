@@ -12,17 +12,19 @@ interface IMenuLink{
 export class NavbarComponent implements OnInit {
 
   menu: Array<IMenuLink> = [
+    
+    
     {
-      routePath: '/about-me',
-      linkName: 'About Me'
+      routePath: '/interests',
+      linkName: 'Interests'
     },
     {
       routePath: '/work-experience',
       linkName: 'Work Experience'
     },
     {
-      routePath: '/interests',
-      linkName: 'Interests'
+      routePath: '/about-me',
+      linkName: 'About Me'
     }
   ]
 

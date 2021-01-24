@@ -1,1 +1,10 @@
-<p>interests works!</p>
+<div class="content">
+    <div *ngFor="let item of imageDescriptionList">
+        <div class="photo">
+            <img *ngIf="item" src={{item.url}} alt="yoga">
+            <div class="texts" *ngIf="item">
+                {{item.description}}
+            </div>
+        </div>
+    </div>
+</div>
