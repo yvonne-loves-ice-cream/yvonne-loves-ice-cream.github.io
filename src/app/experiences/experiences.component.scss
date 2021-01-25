@@ -35,3 +35,22 @@
 .experience-card {
     width: 400px;
 }
+
+@media screen and (max-width: 900px) {
+    .experience-card {
+        width: 100%;
+    }
+    .content {
+        margin: 50px 15px;
+        display: block!important;
+    }
+    .right-card {
+        margin-left: 0;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .content {
+        margin: 50px 15px;
+    }
+}
