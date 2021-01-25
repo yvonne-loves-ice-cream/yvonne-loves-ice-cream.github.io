@@ -11,10 +11,30 @@ div.photo {
     background-color: white;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     margin-bottom: 25px;
-    float: left
+    float: left;
 }
 
 div.texts {
     text-align: center;
     padding: 10px 20px;
+}
+
+@media screen and (max-width: 800px) {
+    .content {
+        margin: 50px 7.5px;
+    }
+    div.photo {
+        width: 50%;
+        float: left;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .content {
+        margin: 50px 7.5px;
+    }
+    div.photo {
+        width: 100%;
+        float: none !important;
+    }
 }

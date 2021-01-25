@@ -31,9 +31,6 @@ export class InterestsComponent implements OnInit, OnDestroy {
         }
     ));
   }
- 
-
-
 }
 
 

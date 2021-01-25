@@ -8,6 +8,7 @@ import { InterestsComponent } from './interests/interests.component';
 import { ExperiencesComponent } from './experiences/experiences.component';
 import { ContentsComponent } from './contents/contents.component';
 import { MatCardModule} from '@angular/material/card';
+import {MatIconModule} from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { MatCardModule} from '@angular/material/card';
     BrowserModule,
     AppRoutingModule,
     MatCardModule,
-    HttpClientModule
+    HttpClientModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]
