@@ -1,0 +1,16 @@
+.icons{
+    width: 20px;
+    margin: 0px 15px;
+}
+
+p{
+    text-align: center;
+}
+
+.foot{
+    position: fixed;
+    z-index: 2;
+    width: 100%;
+    bottom: 0;
+    left: auto;
+}

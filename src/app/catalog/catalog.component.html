@@ -1,0 +1,13 @@
+<ul class="topnav" id="myTopnav">
+    <li class="active" style="float: left;">
+        <a>Yvonne</a>
+    </li>
+    <li class="icon">
+        <button mat-icon-button (click)="openMenu()">
+        <mat-icon>more_vert</mat-icon>
+        </button>
+    </li>
+    <li *ngFor="let item of menu">
+        <a [routerLink]="[item.routePath]" routerLinkActive="is-currentRoute" class="category-link">{{item.linkName}}</a>
+    </li>
+</ul>
