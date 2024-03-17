@@ -1,0 +1,46 @@
+img {
+    border-radius: 50%;
+    margin-left: 30px;
+    width: 40%;
+    float: right;
+}
+
+.content {
+    margin: 100px 200px;
+}
+
+h3.t1 {
+    color: #313131;
+    font-size: 30px;
+    font-family: 'Lato', sans-serif;
+}
+
+h3.t2 {
+    color: #818181;
+    font-size: 22px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: lighter;
+}
+
+p {
+    font-size: 22px;
+}
+
+@media screen and (max-width: 800px) {
+    .content {
+        margin: 20px 7.5px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    img {
+        display: block !important;
+        margin-left: 25% !important;
+        float: none !important;
+        margin: 0;
+    }
+    h3.t2,
+    h3.t1 {
+        margin-left: 25%;
+    }
+}

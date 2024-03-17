@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Route } from '@angular/router';
 
 interface IMenuLink{
   routePath: string;
@@ -14,10 +15,13 @@ export class CatalogComponent {
 
   menu: Array<IMenuLink> = [
     
-    
     {
-      routePath: '/work-experience',
-      linkName: 'Work Experience'
+      routePath:'/blogs',
+      linkName: 'Blogs'
+    },
+    {
+      routePath: '/experience',
+      linkName: 'Experience'
     },
     {
       routePath: '/about-me',
@@ -25,6 +29,7 @@ export class CatalogComponent {
     }
   ]
 
+  mainlink: '\main'
   openMenu(): void {
     var x = document.getElementById("myTopnav")!;
     if (x.className === "topnav") {
