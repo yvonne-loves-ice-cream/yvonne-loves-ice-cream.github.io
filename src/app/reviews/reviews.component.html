@@ -1,1 +1,56 @@
-<p>reviews works!</p>
+<div class="space"></div>
+
+
+
+<div class="container">
+    <mat-card class="blog-form-card">
+      <!-- <mat-card-title>Create a New Blog</mat-card-title> -->
+      <mat-card-content>
+        <form (ngSubmit)="onSubmit()">
+          <mat-form-field class="wide-form-field">
+            <mat-label>Name</mat-label>
+            <input matInput type="text" id="name" [(ngModel)]="blog.name" name="name">
+          </mat-form-field>
+  
+          <mat-form-field class="wide-form-field">
+            <mat-label>Content</mat-label>
+            <textarea matInput id="content" [(ngModel)]="blog.content" name="content"></textarea>
+          </mat-form-field>
+  
+          <div class="example-button-container">
+            <button mat-stroked-button type="submit">Create Blog</button>
+          </div>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  
+    <mat-divider></mat-divider>
+  
+
+    <div class="blog-list">
+        <!-- <h2>All Blogs My Good Friends Left Here</h2> -->
+        <ul>
+            <li *ngFor="let item of paginatedBlogs">
+              <h3>{{ item.name }}</h3>
+              <p class="date">Posted on: {{ item.createdAt | date:'medium' }}</p>
+              <p>
+                {{ item.content | slice:0:wordLimit }}
+                <span *ngIf="item.content.length > wordLimit && !item.expanded">...</span>
+                <span *ngIf="item.expanded">{{ item.content.slice(wordLimit) }}</span>
+              </p>
+              <a *ngIf="item.content.length > wordLimit" (click)="toggleExpand(item)" class="expand-link">
+                {{ item.expanded ? 'Collapse' : 'Expand' }}
+              </a>
+            </li>
+          </ul>
+      
+        <mat-paginator [length]="blogs.length"
+                       [pageSize]="5"
+                       [pageSizeOptions]="[5]"
+                       (page)="onPageChange($event)">
+        </mat-paginator>
+      </div>
+      
+      
+  
+

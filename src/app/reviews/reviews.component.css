@@ -1,0 +1,120 @@
+.space{
+    margin-top: 100px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .blog-form-card,
+  .blog-list-card {
+    margin-bottom: 20px;
+    padding: 5px;
+    box-shadow: 0.5px 0px 0.5px #aaa;
+  }
+  
+  .wide-form-field {
+    width: 100%;
+  }
+  
+  button[mat-stroked-button] {
+    border-color: #7e57c2;  /* Deep purple border */
+    color: #7e57c2;  /* Deep purple text color */
+    font-size: 15px;
+  }
+  
+  button[mat-stroked-button]:hover {
+    background-color: rgba(126, 87, 194, 0.1);  /* Light purple background on hover */
+    border-color: #7e57c2;  /* Keep the deep purple border on hover */
+  }
+  .example-button-container {
+    display: flex;
+    justify-content: center; /* Center the button */
+    margin-top: 5px;
+  }
+ 
+  
+  
+  .blog-list h2 {
+    font-weight: lighter;
+    font-size: 1.5em;
+    color: #5e35b1; /* Deep purple color */
+    margin-bottom: 20px;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for effect */
+  }
+  
+  .blog-list ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .blog-list li {
+    padding: 15px 0;
+  border-bottom: 1px solid #ddd;
+  position: relative;
+  padding-left: 30px; /* Add space for custom bullet */
+
+  }
+  
+  .blog-list h3 {
+    margin: 0 0 5px 0;
+    font-size: 1.2em;
+    font-weight: bold;
+  }
+  
+  .blog-list p {
+    margin: 0;
+    color: #555;
+  }
+  
+  .blog-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 20px;
+    width: 10px;
+    height: 10px;
+    border: 2px solid #7e57c2; /* Deep purple border */
+    border-radius: 50%; /* Make it a circle */
+    background-color: transparent; /* Hollow inside */
+  }
+
+  /* Style for the blog title */
+.blog-list h3 {
+  margin: 0 0 5px 0;
+  font-size: 1.2em;
+  font-weight: 400;
+  color: #4527a0; /* A darker shade of purple */
+}
+
+.blog-list p.date {
+  margin: 0;
+  font-size: 0.9em;
+  color: #888;
+}
+
+/* Style for the blog content */
+.blog-list p {
+  margin: 0;
+  color: #555;
+  font-size: 1em;
+}
+
+
+  .expand-link {
+    color: #1976d2;  /* Blue-ish color for the link */
+    cursor: pointer;
+    text-decoration: underline;
+    font-size: 1em;  /* Match the size of the content */
+    display: inline-block;
+    margin-top: 5px;
+  }
+  
+  .expand-link:hover {
+    text-decoration: none;  /* Remove underline on hover */
+  }
+  
+
