@@ -33,7 +33,7 @@ export class ReviewsComponent implements OnInit {
   }
 
   loadBlogs() {
-    this.http.get('http://localhost:5001/api/blogs').subscribe((data: any[]) => {
+    this.http.get('https://yvonnesun-e8d7a4a7c2e6.herokuapp.com/api/blogs').subscribe((data: any[]) => {
       this.blogs = data;  // Populate the blogs array with data from server
       this.updatePaginatedBlogs();
     });
@@ -42,7 +42,7 @@ export class ReviewsComponent implements OnInit {
 
   onSubmit(){
     if(this.blogForm.valid){
-      this.http.post('http://localhost:5001/api/blogs', this.blog).subscribe(
+      this.http.post('https://yvonnesun-e8d7a4a7c2e6.herokuapp.com/api/blogs', this.blog).subscribe(
         response => {
           console.log('Blog created successfully:', response);
           this.loadBlogs()
