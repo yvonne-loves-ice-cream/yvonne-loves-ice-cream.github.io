@@ -1,13 +1,100 @@
-.image-container {
-    width: 100vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden; 
-}
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden; /* Prevent horizontal scroll if any */
+  }
+  
+  .background-container {
+    position: fixed;
+    top: 55px; 
+    left: 0;
+    width: 100%;
+    height: calc(100% - 55px); 
+    background-image: url('/assets/image/lighthouse.png');
+    /* background-image: url('/assets/image/lighthouse_transparent.png'); */
+    background-size: cover; 
+    background-repeat: no-repeat;
+    background-position: center;
+    /* opacity: 0.4;  */
+    z-index: -1; 
+  }
 
-.image-container img
- {
-    max-width: 100%;
-    object-fit: contain; /* Maintain image aspect ratio and fit within container */
-}
+  .body{
+    display: grid;
+	justify-content: center;
+	margin: 0;
+
+	font-family: "Alegreya", serif;
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 1.5em;
+	--hc: #082048;
+	--mc: #052f04ba;
+  
+  }
+
+  
+  article {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    padding: 40px 80px 40px 40px;
+    margin: 40px;
+    max-width: 700px;
+    background-color: rgba(225, 225, 225, 0.8);
+  }
+
+
+
+  section {
+    margin: 0;
+    position: relative;
+  }
+  section::before {
+    position: absolute;
+    left: calc(100% + 60px);
+    top: 0;
+    transform-origin: top left;
+    transform: rotate(90deg);
+    content: attr(aria-label);
+    width: max-content;
+    color: var(--mc);
+    font-family: "Alegreya Sans", sans-serif;
+    font-size: 14px;
+    word-spacing: 1.4px;
+    padding-left: 20px;
+  }
+  p {
+    word-spacing: 1px;
+    text-indent: 2em;
+    text-align: justify;
+    hyphens: auto;
+    margin: 1em 0 0;
+  }
+  /* section:first-of-type p:first-of-type {
+    text-indent: 0;
+  } */
+  p span:first-child {
+    font-size: 20px;
+    font-style: italic;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    color: var(--hc);
+  }
+  section:last-child {
+    height: 15em;
+    overflow: visible clip;
+    background: linear-gradient(rgb(0, 0, 0) 70%, rgba(0, 0, 0, 0));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  
+  
+  
+  /* .rose{
+    width: 20px !important;
+  } */

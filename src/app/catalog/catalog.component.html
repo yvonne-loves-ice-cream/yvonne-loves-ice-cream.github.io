@@ -1,3 +1,5 @@
+
+
 <ul class="topnav" id="myTopnav">
     <li class="active" style="float: left;">
         <a routerLink="/main">Yvonne Sun</a>
@@ -8,6 +10,6 @@
         </button>
     </li>
     <li *ngFor="let item of menu">
-        <a [routerLink]="[item.routePath]" routerLinkActive="is-currentRoute" class="category-link">{{item.linkName}}</a>
+        <a [routerLink]="[item.routePath]" routerLinkActive="is-currentRoute" (click)="closeMenu()" class="category-link">{{item.linkName}}</a>
     </li>
 </ul>

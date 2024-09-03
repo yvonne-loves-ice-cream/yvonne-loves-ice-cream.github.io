@@ -24,6 +24,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatExpansionModule } from '@angular/material/expansion';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,7 +50,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
     MatCardModule,
     MatDividerModule,
     MatPaginatorModule,
-    MatExpansionModule
+    MatExpansionModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

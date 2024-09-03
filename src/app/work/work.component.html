@@ -1,2 +1,30 @@
 <div class="space"></div>
-<kendo-timeline [events]="events" [collapsibleEvents]="true" [alterMode]="true"> </kendo-timeline> 
+<div class="timeline">
+    <div *ngFor="let experience of experiences" class="timeline-item" [ngClass]="{'left': experience.type === 'education', 'right': experience.type === 'work','school': experience.type === 'education', 'work': experience.type === 'work'}">
+      <div class="timeline-content">
+        <h2>{{ experience.title }}</h2>
+        <h4>{{ experience.subtitle }}</h4>
+        <div class="description" [ngClass]="{ 'collapsed': !experience.expanded }">
+          <p>
+            <!-- Show truncated content when collapsed -->
+            <span *ngIf="!experience.expanded">
+              {{ experience.description.length > 200 ? (experience.description | slice: 0: 200) + '...' : experience.description }}
+            </span>
+            <!-- Show full content when expanded -->
+            <span *ngIf="experience.expanded">
+              {{ experience.description }}
+            </span>
+            <!-- Expand/Collapse link -->
+            <a *ngIf="experience.description.length >200" (click)="experience.expanded = !experience.expanded" class="expand-link">
+              {{ experience.expanded ? 'Collapse' : 'Expand' }}
+            </a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <app-footer></app-footer>
+  
+  
+  

@@ -29,14 +29,21 @@ export class CatalogComponent {
     }
   ]
 
-  mainlink: '\main'
-  openMenu(): void {
-    var x = document.getElementById("myTopnav")!;
-    if (x.className === "topnav") {
-      x.className += " responsive";
-    } else {
-      x.className = "topnav";
+  mainlink: '/main'
+  openMenu() {
+    const topNav = document.getElementById("myTopnav");
+    if (topNav) {
+      if (topNav.className === "topnav") {
+        topNav.className += " responsive";
+      } else {
+        topNav.className = "topnav";
+      }
     }
   }
-
+  closeMenu() {
+    const topNav = document.getElementById("myTopnav");
+    if (topNav && topNav.className.includes("responsive")) {
+      topNav.className = "topnav"; // Close the menu
+    }
+  }
 }
