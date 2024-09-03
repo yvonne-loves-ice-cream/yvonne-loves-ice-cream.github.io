@@ -7,7 +7,7 @@ app.use(cors());
 app.use(express.json());
 
 // Replace with your MongoDB Atlas connection string
-const mongoUri = "mongodb+srv://yvonnesunyy:Ba0624676@cluster0.ymy3o3k.mongodb.net/yvonnesun?retryWrites=true&w=majority&appName=Cluster0";
+// const mongoUri = "mongodb+srv://yvonnesunyy:Ba0624676@cluster0.ymy3o3k.mongodb.net/yvonnesun?retryWrites=true&w=majority&appName=Cluster0";
 
 
 // const client = new MongoClient(uri);
