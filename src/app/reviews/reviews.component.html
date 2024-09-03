@@ -6,19 +6,19 @@
     <mat-card class="blog-form-card">
       <!-- <mat-card-title>Create a New Blog</mat-card-title> -->
       <mat-card-content>
-        <form (ngSubmit)="onSubmit()">
+        <form [formGroup]="blogForm"  (ngSubmit)="onSubmit()">
           <mat-form-field class="wide-form-field">
             <mat-label>Name</mat-label>
-            <input matInput type="text" id="name" [(ngModel)]="blog.name" name="name">
+            <input matInput type="text" id="name"  name="name" formControlName="name" required>
           </mat-form-field>
   
           <mat-form-field class="wide-form-field">
             <mat-label>Content</mat-label>
-            <textarea matInput id="content" [(ngModel)]="blog.content" name="content"></textarea>
+            <textarea matInput formControlName="content" id="content"  name="content" required></textarea>
           </mat-form-field>
   
           <div class="example-button-container">
-            <button mat-stroked-button type="submit">Create Blog</button>
+            <button mat-stroked-button type="submit" [disabled]="blogForm.invalid">Create Blog</button>
           </div>
         </form>
       </mat-card-content>

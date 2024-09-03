@@ -22,7 +22,7 @@
   button[mat-stroked-button] {
     border-color: #7e57c2;  /* Deep purple border */
     color: #7e57c2;  /* Deep purple text color */
-    font-size: 15px;
+    font-size: 16px;
   }
   
   button[mat-stroked-button]:hover {
@@ -33,6 +33,20 @@
     display: flex;
     justify-content: center; /* Center the button */
     margin-top: 5px;
+  }
+
+  button[mat-stroked-button][disabled] {
+    border-color: #e0e0e0;  /* Light grey border when disabled */
+    color: #b0b0b0;  /* Grey text color when disabled */
+    background-color: rgba(0, 0, 0, 0.05);  /* Very light grey background when disabled */
+    cursor: not-allowed;  /* Change cursor to indicate it's not clickable */
+    opacity: 0.8;  /* Slight transparency to indicate it's disabled */
+  }
+  
+  /* Optional: Hover effect even when disabled (though usually not needed) */
+  button[mat-stroked-button][disabled]:hover {
+    background-color: rgba(0, 0, 0, 0.05);  /* Keep the very light grey background */
+    border-color: #e0e0e0;  /* Keep the light grey border */
   }
  
   

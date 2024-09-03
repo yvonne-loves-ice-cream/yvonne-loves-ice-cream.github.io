@@ -4,6 +4,7 @@ body, html {
     height: 100%;
     width: 100%;
     overflow-x: hidden; /* Prevent horizontal scroll if any */
+    background: none;
   }
   
   .background-container {
@@ -18,13 +19,17 @@ body, html {
     background-repeat: no-repeat;
     background-position: center;
     /* opacity: 0.4;  */
-    z-index: -1; 
+    /* z-index: -1;  */
   }
 
-  .body{
-    display: grid;
+  .mybody{
+    
+    z-index: 1;
+    display: flex;
 	justify-content: center;
-	margin: 0;
+	margin-top: 100px;
+  flex-direction: column;
+    justify-content: center;
 
 	font-family: "Alegreya", serif;
 	font-size: 22px;
@@ -32,19 +37,18 @@ body, html {
 	line-height: 1.5em;
 	--hc: #082048;
 	--mc: #052f04ba;
-  
+  overflow-y: auto; /* Make the content scrollable */
+  background: transparent; /* Ensure the background image is visible */
   }
 
   
   article {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    align-items: stretch;
-    padding: 40px 80px 40px 40px;
-    margin: 40px;
+    padding: 45px 80px 40px 40px;
+    margin: auto;
     max-width: 1000px;
-    background-color: rgba(225, 225, 225, 0.8);
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Optional: add some shadow for contrast */
+    z-index: 2; /* Ensure article is above other elements */
   }
 
 
@@ -94,7 +98,24 @@ body, html {
   }
   
   
+
+  @media screen and (max-width: 600px) {
+
+      
+  article {
+    padding: 15px 15px 5px 10px;
+    }
+
+    .mybody{
+      margin-top: 40px;
+    }
+    article {
+      background-color: rgba(255, 255, 255, 0.5);
+    }
+    p{font-size: 16px;}
+    
+  }
+  p span:first-child {
+    font-size: 18px;
+  }
   
-  /* .rose{
-    width: 20px !important;
-  } */

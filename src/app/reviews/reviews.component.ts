@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { PageEvent } from '@angular/material/paginator';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-reviews',
@@ -8,7 +9,7 @@ import { PageEvent } from '@angular/material/paginator';
   styleUrls: ['./reviews.component.css']
 })
 export class ReviewsComponent implements OnInit {
-
+  blogForm: FormGroup;
 
   blogs: any[] = []; 
   paginatedBlogs: any[] = [];
@@ -18,8 +19,14 @@ export class ReviewsComponent implements OnInit {
   blog = { name: '', content: '' }; 
   wordLimit: number = 100;
   constructor(
-    private http: HttpClient
-  ){ }
+    private http: HttpClient,
+    private fb: FormBuilder
+  ){
+    this.blogForm = this.fb.group({
+      name: ['', Validators.required],
+      content: ['', Validators.required]
+    });
+   }
   ngOnInit() {
     this.loadBlogs();
     this.updatePaginatedBlogs();
@@ -34,16 +41,23 @@ export class ReviewsComponent implements OnInit {
   }
 
   onSubmit(){
-    this.http.post('http://localhost:5001/api/blogs', this.blog).subscribe(
-      response => {
-        console.log('Blog created successfully:', response);
-        this.loadBlogs()
-        this.blogs.push(response);
-        this.blog = {name: '', content:''};
-      }, error => {
-        console.error('Error creating blog:', error);
-      }
-    )
+    if(this.blogForm.valid){
+      this.http.post('http://localhost:5001/api/blogs', this.blog).subscribe(
+        response => {
+          console.log('Blog created successfully:', response);
+          this.loadBlogs()
+          this.blogs.push(response);
+          this.blog = {name: '', content:''};
+        }, error => {
+          console.error('Error creating blog:', error);
+          alert("Failed to create a blog!");
+        }, ()=>{
+          confirm("New blog created!");
+        }
+        
+      )
+    }
+  
   }
   updatePaginatedBlogs() {
     const startIndex = this.pageIndex * this.pageSize;

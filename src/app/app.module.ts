@@ -22,6 +22,7 @@ import {MatCardModule} from '@angular/material/card';
 import {MatDividerModule} from '@angular/material/divider';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -51,6 +52,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
     MatDividerModule,
     MatPaginatorModule,
     MatExpansionModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
