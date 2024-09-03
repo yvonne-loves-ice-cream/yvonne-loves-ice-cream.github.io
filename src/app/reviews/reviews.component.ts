@@ -42,12 +42,12 @@ export class ReviewsComponent implements OnInit {
 
   onSubmit(){
     if(this.blogForm.valid){
-      this.http.post('https://yvonnesun-e8d7a4a7c2e6.herokuapp.com/api/blogs', this.blog).subscribe(
+      this.http.post('https://yvonnesun-e8d7a4a7c2e6.herokuapp.com/api/blogs', this.blogForm.value).subscribe(
         response => {
           console.log('Blog created successfully:', response);
           this.loadBlogs()
           this.blogs.push(response);
-          this.blog = {name: '', content:''};
+          this.blogForm.reset();
         }, error => {
           console.error('Error creating blog:', error);
           alert("Failed to create a blog!");
