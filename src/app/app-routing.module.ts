@@ -7,7 +7,7 @@ import { IntroductionComponent } from './introduction/introduction.component';
 
 const routes: Routes = [   {
   path: '',
-  redirectTo: 'main',
+  redirectTo: 'about-me',
   pathMatch: 'full'
 },
 {

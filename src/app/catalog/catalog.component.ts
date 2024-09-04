@@ -29,7 +29,7 @@ export class CatalogComponent {
     }
   ]
 
-  mainlink: '/main'
+  mainlink: '/about-me'
   openMenu() {
     const topNav = document.getElementById("myTopnav");
     if (topNav) {
