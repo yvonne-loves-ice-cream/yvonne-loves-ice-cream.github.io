@@ -1,0 +1,159 @@
+:host { display: block; }
+
+.dior-nav{
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: #fff;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+}
+
+.dior-nav__bar{
+  height: 64px;
+  display:flex;
+  align-items:center;
+  justify-content: space-between;
+  padding: 0 clamp(14px, 2.5vw, 28px);
+}
+
+.dior-nav__brand{
+  text-decoration:none;
+  color:#111;
+  font-size: 14px;
+  letter-spacing: 0.42em;
+  text-transform: uppercase;
+  padding-left: 0.42em; /* 视觉居中 */
+}
+
+.dior-nav__right{
+  width: 40px; /* 平衡左侧 burger 的宽度 */
+}
+
+/* ===== Burger ===== */
+.burger{
+  width: 40px;
+  height: 36px;
+  border:0;
+  background:transparent;
+  cursor:pointer;
+  padding: 0;
+}
+.burger span{
+  display:block;
+  height:1px;
+  background:#111;
+  margin: 7px 0;
+}
+
+/* ===== Overlay ===== */
+.overlay{
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.25);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 260ms ease;
+  z-index: 60;
+}
+.overlay.is-open{
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ===== Drawer (LEFT) ===== */
+.drawer{
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: min(420px, 88vw);
+  background: #fff;
+  border-right: 1px solid rgba(0,0,0,0.08);
+  transform: translateX(-102%);
+  transition: transform 300ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  z-index: 61;
+  padding: 18px 18px 28px;
+}
+.drawer.is-open{
+  transform: translateX(0);
+}
+
+.drawer__top{
+  display:flex;
+  justify-content: flex-start;
+  align-items:center;
+  height: 44px;
+}
+
+.drawer__close{
+  font-size: 28px;
+  line-height: 1;
+  border:0;
+  background:transparent;
+  cursor:pointer;
+}
+
+.drawer__section{
+  padding-top: 18px;
+  border-top: 1px solid rgba(0,0,0,0.08);
+  margin-top: 18px;
+}
+
+.drawer__title{
+font-size: 18px;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: #111;
+  margin-bottom: 16px;
+  font-weight: 300;
+
+
+
+  margin-bottom: 10px;
+}
+
+.drawer__link{
+  display:block;
+  text-decoration:none;
+  color:#111;
+  font-size: 12px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  padding: 12px 0;
+}
+
+.drawer__link:hover{
+  text-decoration: underline;
+  text-underline-offset: 6px;
+}
+
+.is-disabled{
+  opacity: 0.45;
+  cursor: default;
+  text-decoration:none !important;
+}
+
+
+@media (prefers-reduced-motion: reduce){
+  .drawer, .overlay { transition: none !important; }
+}
+
+.nav-bar{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  background: #fff;
+
+  transition:
+    transform 280ms cubic-bezier(0.4,0,0.2,1),
+    opacity 280ms ease;
+}
+
+
+.nav-hidden{
+  transform: translateY(-100%);
+  opacity: 0;
+}
+

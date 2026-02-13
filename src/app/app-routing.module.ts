@@ -4,19 +4,25 @@ import { WorkComponent } from './work/work.component';
 import { MainComponent } from './main/main.component';
 import { ReviewsComponent } from './reviews/reviews.component';
 import { IntroductionComponent } from './introduction/introduction.component';
+import { LandingComponent } from './landing/landing.component';
+import { WorkPageComponent } from './work-page/work-page.component';
 
 const routes: Routes = [   {
   path: '',
-  redirectTo: 'about-me',
+  redirectTo: 'landing',
   pathMatch: 'full'
 },
 {
-  path: 'main',
-  component: MainComponent
+  path: 'contact',
+  component: WorkPageComponent, data: { section: 'contact' } 
+},    
+{
+  path: 'beyond-work',
+  component: WorkPageComponent, data: { section: 'main' } 
 },    
 {
   path: 'experience',
-  component: WorkComponent,
+  component: WorkPageComponent, data: { section: 'experience' } 
 },
 {
   path: 'blogs',
@@ -24,10 +30,26 @@ const routes: Routes = [   {
 },
 {
   path: 'about-me',
-  component: IntroductionComponent
-}
+  component:  WorkPageComponent, data: { section: 'intro' }
+},
+{
+  path: 'resume',
+  component:  WorkPageComponent, data: { section: 'resume' }
+},
+{
+  path:'landing',
+  component: LandingComponent
+},
+ { 
+  path: 'work', component: WorkPageComponent, 
+  data: { section: 'intro' } },
 
 ];
+
+RouterModule.forRoot(routes, {
+  scrollPositionRestoration: 'enabled',
+})
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

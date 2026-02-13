@@ -1,3 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
 @import "node_modules/bootstrap/dist/css/bootstrap.css";
 @import "../node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css";
+body {
+  opacity: 1;
+  transition: opacity 0.4s ease;
+  /* padding-top: 64px; */
+}
+
+body.fade-out {
+  opacity: 0;
+}

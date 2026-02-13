@@ -1,0 +1,174 @@
+.contact{
+  background: #fff;
+  min-height: 90vh;
+  padding: clamp(56px, 8vw, 110px) 0;
+}
+
+.contact__wrap{
+  max-width: 1320px;
+  margin-left: 6vw;     /* ⭐ 左锚点（你之前想要的“靠左一点”） */
+  margin-right: auto;
+  padding-right: 6vw;
+
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: clamp(28px, 5vw, 72px);
+  align-items: start;
+}
+
+.contact__title{
+  letter-spacing: 6px;
+  font-weight: 500;
+  font-size: 14px;
+  margin: 0 0 18px;
+}
+
+.contact__lead{
+  font-size: clamp(22px, 2.6vw, 34px);
+  line-height: 1.2;
+  margin: 0 0 34px;
+}
+
+.contact__lines{
+  display: grid;
+  gap: 16px;
+  padding-top: 6px;
+  border-top: 1px solid rgba(0,0,0,0.08);
+}
+
+.line{
+  display: grid;
+  grid-template-columns: 90px 1fr;
+  gap: 18px;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+
+.k{
+  letter-spacing: 3px;
+  font-size: 11px;
+  color: rgba(0,0,0,0.55);
+}
+
+.v{
+  font-size: 15px;
+  color: rgba(0,0,0,0.9);
+  text-decoration: none;
+}
+
+.v:hover{
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.muted{
+  color: rgba(0,0,0,0.55);
+}
+
+.contact__cta{
+  display: flex;
+  gap: 12px;
+  margin-top: 22px;
+}
+
+.btn{
+  border: 1px solid rgba(0,0,0,0.18);
+  background: rgba(0,0,0,0.9);
+  color: #fff;
+  padding: 10px 14px;
+  font-size: 12px;
+  letter-spacing: 2px;
+  cursor: pointer;
+  border-radius: 999px;
+}
+
+.btn:hover{
+  filter: brightness(0.98);
+}
+
+.btn--ghost{
+  background: transparent;
+  color: rgba(0,0,0,0.9);
+}
+
+.contact__note{
+  margin-top: 14px;
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: rgba(0,0,0,0.55);
+}
+
+/* right card */
+.card{
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 18px;
+  padding: 22px 22px 18px;
+  background: #fafafa;
+}
+
+.card__eyebrow{
+  letter-spacing: 4px;
+  font-size: 11px;
+  color: rgba(0,0,0,0.55);
+  margin-bottom: 10px;
+}
+
+.card__text{
+  font-size: 15px;
+  line-height: 1.7;
+  color: rgba(0,0,0,0.88);
+}
+
+.dim{
+  color: rgba(0,0,0,0.55);
+}
+
+.card__divider{
+  height: 1px;
+  background: rgba(0,0,0,0.08);
+  margin: 18px 0;
+}
+
+.card__mini{
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 14px;
+  padding: 10px 0;
+}
+
+.mini__k{
+  letter-spacing: 3px;
+  font-size: 11px;
+  color: rgba(0,0,0,0.55);
+}
+
+.mini__v{
+  font-size: 13px;
+  color: rgba(0,0,0,0.85);
+}
+
+/* reveal */
+.bw-reveal{
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 850ms ease, transform 850ms cubic-bezier(0.2,0.8,0.2,1);
+}
+.bw-reveal.show{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* mobile */
+@media (max-width: 900px){
+  .contact__wrap{
+    margin-left: 18px;
+    padding-right: 18px;
+    grid-template-columns: 1fr;
+  }
+  .contact__cta{
+    flex-wrap: wrap;
+  }
+  .card__mini{
+    grid-template-columns: 1fr;
+  }
+}

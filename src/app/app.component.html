@@ -1,15 +1,3 @@
-<!DOCTYPE html>
-<html>
-
-
-<body>
-
-  <app-catalog></app-catalog>
-
-
- 
-  
-  <router-outlet></router-outlet>
-  <!-- <app-footer></app-footer> -->
-</body>
-</html>
+<!-- <app-catalog *ngIf="showNav"></app-catalog> -->
+<app-nav-bar *ngIf="showNav"></app-nav-bar>
+<router-outlet></router-outlet>

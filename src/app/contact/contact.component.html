@@ -1,0 +1,64 @@
+<section class="contact" #hero>
+  <div class="contact__wrap bw-reveal">
+    <div class="contact__left">
+      <h1 class="contact__title">CONTACT</h1>
+      <p class="contact__lead">
+        Say my name, or just say hi. Either works.
+      </p>
+
+      <div class="contact__lines">
+        <div class="line">
+          <div class="k">Email</div>
+          <a class="v" [href]="'mailto:' + email">{{ email }}</a>
+        </div>
+
+        <div class="line">
+          <div class="k">Instagram</div>
+          <a class="v" [href]="instagram" target="_blank" rel="noopener">Add me</a>
+        </div>
+
+    
+
+       
+
+        <div class="line">
+          <div class="k">Location</div>
+          <div class="v muted">Toronto</div>
+        </div>
+      </div>
+
+      <div class="contact__cta">
+        <button class="btn" (click)="copy(email)">Copy email</button>
+        <button class="btn btn--ghost" (click)="open(linkedin)">LinkedIn</button>
+      </div>
+
+      <div class="contact__note" *ngIf="toast">{{ toast }}</div>
+    </div>
+
+    <div class="contact__right">
+      <div class="card">
+        <div class="card__eyebrow">Last not but least</div>
+        <div class="card__text">
+            If you want to be one of the fourteen guests at my future Nobel Prize banquet,
+it’s probably wise to be nice to me now.
+          You can bother me for what ever reason, I won't mind.
+          <br>
+          <span class="dim">I reply fast!</span>
+        </div>
+
+        <div class="card__divider"></div>
+
+        <div class="card__mini">
+          <div class="mini__k">What I like to eat</div>
+          <div class="mini__v">Almost everything</div>
+        </div>
+
+        <div class="card__mini">
+          <div class="mini__k">How I usually spend my weekends</div>
+          <div class="mini__v">Drinking.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+</section>

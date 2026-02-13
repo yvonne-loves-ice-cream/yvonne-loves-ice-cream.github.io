@@ -83,3 +83,32 @@ button {
         background-color: rgba(255, 255, 255, 0.7);
     }
 }
+
+.landing {
+  position: relative;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  overflow: hidden;
+}
+
+
+
+.brand-layer {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none; 
+  z-index: 10;
+}
+
+.brand-name {
+  font-size: clamp(64px, 9vw, 160px);
+  letter-spacing: 0.35em;
+  font-weight: 300;
+  color: white;
+  text-transform: uppercase;
+  mix-blend-mode: difference; 
+}

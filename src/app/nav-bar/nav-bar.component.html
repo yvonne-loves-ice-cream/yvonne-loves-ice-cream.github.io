@@ -1,0 +1,43 @@
+<header class="nav-bar" [class.nav-hidden]="navHidden">
+<header class="dior-nav">
+  <div class="dior-nav__bar">
+
+    <button class="burger" type="button" (click)="openDrawer()" aria-label="Open menu">
+      <span></span><span></span>
+    </button>
+
+
+    <a class="dior-nav__brand" [routerLink]="'/'" aria-label="Home">YVONNE</a>
+
+
+    <div class="dior-nav__right"></div>
+  </div>
+
+
+  <div class="overlay" [class.is-open]="drawerOpen" (click)="closeDrawer()" aria-hidden="true"></div>
+
+
+  <aside class="drawer" [class.is-open]="drawerOpen" role="dialog" aria-modal="true" aria-label="Menu">
+    <div class="drawer__top">
+      <button class="drawer__close" type="button" (click)="closeDrawer()" aria-label="Close">×</button>
+    </div>
+
+    <div class="drawer__section">
+      <div class="drawer__title">WORK</div>
+      <a class="drawer__link" [routerLink]="'/about-me'" (click)="navAndClose()">INTRO</a>
+      <a class="drawer__link" [routerLink]="'/experience'" (click)="navAndClose()">EXPERIENCE</a>
+      <a class="drawer__link" [routerLink]="'/resume'" (click)="navAndClose()">RESUME</a>
+    </div>
+
+    <div class="drawer__section">
+      <div class="drawer__title">BEYOND WORK</div>
+
+ <a class="drawer__link" [routerLink]="'/beyond-work'" (click)="navAndClose()">SAY MY NAME </a>
+    </div>
+
+    <div class="drawer__section">
+      <a class="drawer__link" [routerLink]="'/contact'" (click)="navAndClose()">CONTACT</a>
+    </div>
+  </aside>
+</header>
+</header>

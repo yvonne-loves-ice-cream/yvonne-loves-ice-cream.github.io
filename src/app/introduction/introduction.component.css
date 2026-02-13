@@ -1,79 +1,180 @@
-img {
-    border-radius: 50%;
-    margin-left: 2px;
-    width: 35%;
-    float: right;
+.intro-split{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  min-height:100vh;
 }
 
-.content {
-    margin: 50px 200px;
-    margin-top: 120px;
+
+.intro-split__media{
+background:#f6f6f6;
+  padding-left:8vw;
+  display:flex;
+  align-items:center;
+  justify-content:center;
 }
 
-h3.t1 {
-    color: #313131;
-    font-size: 30px;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+.intro-split__media img{
+  width:min(520px,72%);
+  aspect-ratio:1/1;     
+  object-fit:cover;     
+  border-radius:8px; 
 }
 
-h3.t2 {
-    margin-top: 20px;
-    color: #818181;
-    font-size: 20px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-weight: lighter;
+
+.intro-split__content{
+  padding:clamp(40px,6vw,100px);
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  max-width:520px;
 }
 
-/* p {
-    font-size: 18px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-} */
+.intro-title{
+font-size:42px;
+  font-weight:300;
 
-.intro{
-    margin-top: 25px;
-    margin-right: 25px;
-    font-size: 18px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+  letter-spacing:0.02em;
+  margin-bottom:12px;
 }
 
-@media screen and (max-width: 800px) {
-    .content {
-        margin: 20px 7.5px;
-        margin-bottom: 130px;
-        margin-top: 50px;
-    }
+.intro-role{
+letter-spacing:0.42em;
+  font-size:11px;
+  opacity:0.55;
+  margin-bottom:22px;
+  font-size: 12px;
+}
+
+.intro-split__content p{
+  line-height:1.8;
+  margin-bottom:16px;
+}
+.intro-cta{
+  margin-top: 22px;
+  font-size: 12px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.intro-cta a{
+  color:#111;
+  text-decoration:none;
+}
+
+.intro-cta a:hover{
+  text-decoration: underline;
+  text-underline-offset: 6px;
+}
+
+/* Mobile */
+@media (max-width: 900px) {
+    .intro-foot{
+  font-size:14px;
+  opacity:0.65;
+}
+
+
+  .intro-split {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 64vh auto; /* ⭐ 图片占更大屏 */
+    min-height: 100vh;
+  }
+
+
+  .intro-split__media {
+    background: #f6f6f6;
+    padding: 8px 0 0 0;  /* ⭐ 更贴近顶部 */
+    display: grid;
+    place-items: center;
+  }
+
+  .intro-split__media img {
+    width: min(94vw, 520px);   /* ⭐ 图片更大 */
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 5px;       
+    box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+  }
+
+
+  .intro-split__content {
+    padding: 22px 18px 48px;   /* ⭐ 文字块变小 */
+    max-width: none;
+  }
+
+  .intro-title {
+    font-size: 34px;
+    font-weight: 300;
+    letter-spacing: -0.02em;
+    margin-bottom: 12px;
+  }
+
+  .intro-role {
+    font-size: 11px;
+    letter-spacing: 0.45em;
+    text-transform: uppercase;
+    opacity: 0.55;
+    margin-bottom: 18px;
+  }
+
+  .intro-split__content p {
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 14px;
+  }
+  .intro-cta{
+  justify-content: center;   /* ⭐ 横向居中 */
+  text-align: center;
+  margin-top: 34px;
+   letter-spacing: 0.32em;  
+    opacity: 0;
+  transform: translateY(8px);
+  animation: diorReveal 700ms cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+  animation-delay: 240ms;
+}
+.intro-split__content{
+  max-width: 480px;
+}
+.intro-cta span{
+  opacity: 0.4;
+}
 
 }
 
-@media screen and (max-width: 800px) {
-    img {
-        display: block !important;
-        margin-left: 30% !important;
-        float: none !important;
-        margin: 0;
-    }
-    h3.t2{
-        /* margin-left: 30%; */
-        font-size: 15px;
-        text-align: center;
-    }
-    h3.t1 {
-        margin-top: 10px;
-        font-size: 21px;
-        text-align: center;
 
-    }
-    .intro{
-        margin-top: 10px;
-        margin-right: 15px;
-        margin-left: 15px;
-        text-align: center;
-        font-size: 14px;
-        font-family: Georgia, 'Times New Roman', Times, serif;
-    }
-
+.intro-foot{
+  opacity: 0.75;
+  font-size: 14px;
 }
 
-.space{
-    margin-top: 20px;
+/* ===== Dior-style subtle reveal (no JS) ===== */
+.reveal {
+  opacity: 0;
+  transform: translateY(10px);
+  animation: diorReveal 700ms cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+/* 让文字比图片稍晚一点（更高级） */
+.intro-split__content.reveal {
+  animation-delay: 120ms;
+}
+
+@keyframes diorReveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 尊重系统“减少动效”设置 */
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
 }

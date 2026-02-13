@@ -23,6 +23,13 @@ import {MatDividerModule} from '@angular/material/divider';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { ReactiveFormsModule } from '@angular/forms';
+import { LandingComponent } from './landing/landing.component';
+import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { WorkPageComponent } from './work-page/work-page.component';
+import { ResumeComponent } from './resume/resume.component';
+import { SafeUrlPipe } from './shared/safe-url.pipe';
+import { ContactComponent } from './contact/contact.component';
+
 
 
 
@@ -34,7 +41,13 @@ import { ReactiveFormsModule } from '@angular/forms';
     MainComponent,
     FooterComponent,
     ReviewsComponent,
-    IntroductionComponent
+    IntroductionComponent,
+    LandingComponent,
+    NavBarComponent,
+    WorkPageComponent,
+    ResumeComponent,
+    SafeUrlPipe,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
